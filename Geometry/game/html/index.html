@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>3D Geometry Game</title> <!--TODO change title to match game title -->
+		<style>canvas { width: 100%; height: 100% }</style>
+		<script src = "scripts/jquery.js"></script>
+		<script src="scripts/three.min.js"></script>
+		<script src="scripts/stats.min.js"></script>
+		<!--
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      	</script>
+      	-->
+      	<script src = "scripts/Mathx.js"></script>
+		<script src = "scripts/Game.js"></script>
+
+		<link rel = "stylesheet" href = "css/style.css">
+	</head>
+	<body>
+		<!-- have to load this in body so that it runs -->
+		<script src = "scripts/script.js"></script>
+		
+
+		<div id = "problem" class="popup">
+			<h1></h1>
+		</div>
+
+		<div id = "values">
+			<p id = "point">Point 1: </p>
+			<p id = "line"> Side length: </p>
+			<p id = "area"> Base area: </p>
+			<p id = "height">Box height: </p>
+		</div>
+
+		<div id = "openModal" class = "modal">
+			<div>
+				<a href = "#closeModal" title = "Close" class = "closeModal">X</a>
+				<h1>Welcome!</h1>
+				<ul style = "text-align:left;line-height: 30px;">
+					<li>Use <span class = "key">&#8593</span> <span class = "key">&#8595</span> <span class = "key">&#8594</span> <span class = "key">&#8592</span> to move the cursor around</li>
+					<li>Press <span class = "key">enter</span> to plot a point</li>
+					<li>Press <span class = "key">BACKSPACE</span> to remove point(s)</li>
+					<li>Press <span class = "key">SPACE</span> to move on to the next level</li>
+				</ul>
+			</div>
+		</div>
+		<div id = "score">
+			<p> Score: </p>
+			<p style = "font-size:3.0em;"></p>
+		</div>
+		<div id = "helpBox" >
+			<div class="header"><h1 style= "text-align:center;">Help</h1></div>
+			<div class = "content">
+				<p>hello</p>
+			</div>
+		</div>
+		<div id="controls"><h1 style= "text-align:center;">Controls</h1></div>
+		<a id = "exit" href = "http://www.math-io.com">exit</a>
+	</body>
+</html>
