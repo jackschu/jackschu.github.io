@@ -1,0 +1,262 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700); 
+/* import ubuntu mono font */
+canvas {
+	position: fixed;
+}
+
+.popup {
+	position:absolute; 
+	z-index:1;
+	width: 60%;
+	height: auto;
+	right:20%;
+	left:20%;
+	border-radius: 31px;
+	margin-top:1%;
+	background-color:#3f769b;
+	opacity: 0.9;
+}
+
+.popup > h1{
+  text-align:center;
+  font-family: 'Ubuntu Mono', sans-serif;
+  font-weight:400;
+  margin-top:auto;
+  margin-bottom:auto;
+  padding: 15px;
+  color: #ffffff;
+}
+
+#score {
+	position:absolute; 
+	z-index:1;
+	width: 10%;
+	height: auto;
+	left:2%;
+	top:80%;
+	
+	
+	margin-top:1%;
+	/*background-color:white;
+	opacity: 0.75;
+	border-radius: 10px;*/
+}
+
+#score >p {
+	text-align:left;
+	font-family: 'Ubuntu Mono', sans-serif;
+	font-weight:bold;
+	font-size:2.0em;
+	margin-top:auto;
+	margin-bottom:auto;
+	margin-left:10px;
+	padding:10px;
+}
+#values {
+	position:absolute; 
+	z-index:1;
+	width: 20%;
+	height: auto;
+	right:2%;
+	top:80%;
+	
+	border-radius: 10px;
+	margin-top:1%;
+	background-color:#00cce3;
+	opacity: 0.75;
+	display:none; /* until first level passed */
+}
+
+#values > p {
+	color: #000000;
+	text-align:left;
+	font-family: 'Ubuntu Mono', sans-serif;
+	font-weight:50;
+	font-size:1.4em;
+	margin-top:auto;
+	margin-bottom:auto;
+	margin-left:10px;
+	padding:10px;
+	display:none;
+}
+
+#helpBox {
+	position:absolute; 
+	z-index:1;
+	width: 100px;
+	height: auto;
+	right:1%;
+	top:1%;
+	
+	border-radius: 30px;
+	margin-top:1%;
+	background-color:#3498db;
+	opacity: 1.0;
+	color: white;
+	font-family: 'Ubuntu Mono', sans-serif;
+	-webkit-transition: width 1s;
+	-moz-transition: width 1s;
+	transition: width 1s;
+}
+
+#helpBox > .content {
+	display:none;
+	text-align:left;
+	font-weight:50;
+	margin-top:auto;
+	margin-bottom:auto;
+	margin-left:10px;
+	padding:10px;
+}
+
+#problem {
+	background-color:#3f769b; /* blue-ish */
+}
+
+
+
+#correct{
+	background-color:#10882f; /* green */
+}
+
+#incorrect {
+	background-color:#df2d2d; /* red */
+}
+
+.modal {
+    position: fixed;
+    font-family: 'Ubuntu Mono', Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:1.0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: auto;
+    color:white;
+    font-size:2em;
+}
+.modal:target {
+    opacity:1.0;
+    pointer-events: auto;
+}
+.modal > div {
+    width: 50%;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 20px;
+    background: #2980b9;
+    opacity:1.0;
+    text-align:center;
+}
+.closeModal {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-size:1em;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.closeModal:hover {
+    background: #00d9ff;
+}
+
+.button{
+	padding: 8px 26px;
+	font-size: 1.0em;
+	line-height: 100%;
+/*	text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+*/	color: #fff;
+	
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	transition: background 0.1s ease-in-out;
+	-webkit-transition: background 0.1s ease-in-out;
+	-moz-transition: background 0.1s ease-in-out;
+	-ms-transition: background 0.1s ease-in-out;
+	-o-transition: background 0.1s ease-in-out;
+/*	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+*/	color: #fff;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	border-radius: 40px;
+}
+
+.button:active {
+	padding-top: 15px;
+}
+.button, .button:hover, .button:active {
+	outline: 0 none;
+	text-decoration: none;
+	color: #fff;
+}
+
+.button-1 {
+	background-color: #fdc058;
+/*	box-shadow: 0px 3px 0px 0px #e29003;
+*/}
+.button-1:hover {
+	background-color: #fdb53a;
+}
+.button-1:active {
+	box-shadow: 0px 1px 0px 0px #e29003;
+}
+
+#exit {
+	z-index:2;
+	position:fixed;
+	bottom:2%;
+	right:2%;
+	font-family:'Ubuntu Mono', sans-serif;
+	color:#c0392b;
+	font-weight:bold;
+	font-size:2.0em;
+	text-decoration: none;
+}
+
+#exit:hover{
+	text-shadow:0 4px orange;
+}
+
+.key {
+	font-size:0.6em;
+	color:black;
+	background:white;
+	border-radius:5px;
+	padding: 6px;
+	box-shadow: 2px 2px 1px black;
+}
+
+#controls {
+	z-index:2;
+	position:fixed;
+	bottom:2%;
+	right:45%;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-family: 'Ubuntu Mono', sans-serif;
+	border-radius: 30px;
+	margin-top:1%;
+	background-color:#3498db;
+	opacity: 1.0;
+	color: white;
+}
