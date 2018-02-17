@@ -226,12 +226,18 @@ function onKeyDown(event){
 		}
 	} else if (key == 8) { //BACKSPACE key
 		if($(".popup").attr("id") == "incorrect"){
-			if (Game.points.length > 0){
+		    if (Game.points.length > Game.level-1 || (Game.points.length > 2 && Game.level == 3)){
 				
 				Game.scene.remove( Game.points[Game.points.length - 1] ); //removes most recent point
 			    Game.points.pop(); //removes last element from array
-			    var selectedObject = scene.getObjectByName("trace");
-			    Game.scene.remove(selectedObject);
+			    do{
+			    var selectedObject = Game.scene.getObjectByName("trace");
+
+				if(selectedObject.name == "trace"){
+				    Game.scene.remove(selectedObject);
+				    displayProblem();
+				}
+			    }while (selectedObject.name == "trace")
 			    
 			}	
 			if (Game.level != 3 || Game.points.length == 2){
@@ -733,6 +739,7 @@ function cursorLine(hold){ //TODO
 	// Game.scene.add( cube );
 	// console.log(geometry.vertices);
     var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x000000, opacity: 0.5 } ) );
+
     line.name = "trace";
 	Game.scene.add( line );
 }
