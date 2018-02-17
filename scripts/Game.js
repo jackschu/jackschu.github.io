@@ -229,7 +229,10 @@ function onKeyDown(event){
 			if (Game.points.length > 0){
 				
 				Game.scene.remove( Game.points[Game.points.length - 1] ); //removes most recent point
-				Game.points.pop(); //removes last element from array
+			    Game.points.pop(); //removes last element from array
+			    var selectedObject = scene.getObjectByName("trace");
+			    Game.scene.remove(selectedObject);
+			    
 			}	
 			if (Game.level != 3 || Game.points.length == 2){
 				displayProblem();
@@ -729,6 +732,7 @@ function cursorLine(hold){ //TODO
 	// var cube = new THREE.Mesh( geometry, material );
 	// Game.scene.add( cube );
 	// console.log(geometry.vertices);
-	var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x000000, opacity: 0.5 } ) );
+    var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x000000, opacity: 0.5 } ) );
+    line.name = "trace";
 	Game.scene.add( line );
 }
